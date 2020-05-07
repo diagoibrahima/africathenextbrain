@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des contributions</div>
+    <div class="panel-body">
+      <button class="btn btn-primary" (click)="onGetContributions()">Contribution</button>
+    </div>
+
+<div class="panel-body">
+<form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+        <div class="form-group">
+          <label>Keyword</label>
+          <input type="text" name="keyword" ngModel>
+          <button type="submit" class="btn btn-primary">Chercher</button>
+        </div>
+</form>
+  <table *ngIf="contributions" class="table tabble-striped">
+    <tr>
+      <th>Contribution</th><th>Signature</th>
+    </tr>
+    <tr *ngFor="let c of contributions._embedded.contributions">
+      <td>{{c.message}}</td>
+      <td>{{c.signature}}</td>
+      <td><a class="btn btn-danger" (click)="onDeleteContribution(c)">Delete</a></td>
+    </tr>
+  </table>
+<ul *ngIf="pages" class="nav nav-pills">
+  <li class="clickable" [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages; let i=index">
+  <a  (click)="onPageContribution(i)">{{i}}</a>
+</li>
+</ul>
+</div>
+  </div>
+
+</div>

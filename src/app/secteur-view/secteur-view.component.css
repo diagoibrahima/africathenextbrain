@@ -1,0 +1,47 @@
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.centered2 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.card-inner{
+    margin-left: 4rem;
+
+}
+
+.card {
+   color: black;
+}
+
+textarea {
+margin-bottom: 8px;
+}
+.btnsub {
+ float: right;
+}
+
+.inner {
+
+			margin: 0 auto;
+}
+
+.card {
+
+margin-bottom: 5px;;
+}
+

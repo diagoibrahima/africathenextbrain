@@ -1,0 +1,7 @@
+<div class="image fit " *ngFor="let s of secteurList; let i = index">
+			<a routerLink="/secteur/{{s.secteur}}">
+       <img src="../{{s.image }}" alt="" />
+       <p class="centered"  >{{s.secteur | uppercase}} </p>
+       <p class="centered2">{{s.hashtag}} </p>
+      </a>
+</div>

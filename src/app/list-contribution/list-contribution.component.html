@@ -1,0 +1,43 @@
+
+<div class="btn-group bout align-center" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary btn-sm " (click)="onPageContributionPrevious()">Previous</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="onPageContributionNext()">Next</button>
+</div>
+
+
+<div class="card" *ngFor="let c of contributions._embedded.contributions">
+                  <div class="card-body">
+                      <div class="row">
+                          <!--
+                          <div class="col-md-2">
+                              <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                              <p class="text-secondary text-center">15 Minutes Ago</p>
+                          </div>
+                          -->
+
+
+                          <div class="col-md-12">
+                              <p>
+                                  <a class="float-left" href=""><strong>{{c.signature}}</strong></a>
+                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                            </p>
+                            <div class="clearfix"></div>
+                              <p>{{c.message}}</p>
+                              <p>
+                                  <!--<a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
+                                  <a routerLink="/" class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                                  <a href="#" class="card-link">Lire suite...</a>
+                                  <a href="#" class="card-link">Another link</a>
+                            </p>
+                          </div>
+                      </div>
+                  </div>
+                    <!-- <a href="detail1.html" class="nav previous"><span class="fa fa-chevron-left"></span></a>
+                    <a href="detail2.html" class="nav next"><span class="fa fa-chevron-right"></span></a> -->
+                  </div>
+
+
