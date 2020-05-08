@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class IdeesService {
-  public host = 'http://localhost:8080';
+  public host = 'https://atbn.herokuapp.com/';
   constructor(private httpClient: HttpClient) { }
 
   public getContributions(page: number, size: number) {

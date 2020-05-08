@@ -4,7 +4,6 @@ export class ContributionService{
 
 
 contributionList: Array<Contribution> = ([
-
   {id: 1, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Agriculture'},
   {id: 2, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Santé'},
   {id: 3, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Science'},
