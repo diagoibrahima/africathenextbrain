@@ -1,6 +1,7 @@
 import { IdeesService } from './../service/idees.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as glob from '../../shared/global';
 
 @Component({
   selector: 'app-new-contribution',

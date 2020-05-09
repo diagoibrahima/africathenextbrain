@@ -14,6 +14,10 @@ contributionList: Array<Contribution> = ([
   {id: 8, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Industrie'},
   {id: 9, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Tourisme'},
   {id: 10, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Peche'},
+  {id: 10, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Elevage'},
+  {id: 10, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Economie Numérique'},
+  {id: 10, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Transport'},
+  {id: 10, message: 'Je pense que pour ce qui converne ', etat: 1, secteur:'Autre'},
 ])
 
 getContribution(){

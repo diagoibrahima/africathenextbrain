@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as glob from '../shared/global';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
-  title = 'frontatnbv1';
+title = 'frontatnbv1';
 }

@@ -1,6 +1,7 @@
 import { IdeesService } from './../service/idees.service';
 import { ContributionService } from './../service/contribution.service';
 import { Component, OnInit, Input } from '@angular/core';
+import * as glob from '../../shared/global';
 
 @Component({
   selector: 'app-list-contribution',

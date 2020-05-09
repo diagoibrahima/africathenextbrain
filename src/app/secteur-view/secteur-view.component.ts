@@ -2,6 +2,7 @@ import { ContributionService } from './../service/contribution.service';
 import { SecteurService } from './../service/secteur.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import * as glob from '../../shared/global';
 
 @Component({
   selector: 'app-secteur-view',
@@ -12,7 +13,8 @@ export class SecteurViewComponent implements OnInit {
 
   @Input() sec: string;
   ind: string;
-   hashtag: string;
+  hashtag: string;
+  urlimages = glob.urlimages;
 
   contributionList: any;
 

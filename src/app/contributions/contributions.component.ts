@@ -1,6 +1,7 @@
 import { IdeesService } from './../service/idees.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as glob from '../../shared/global';
 
 @Component({
   selector: 'app-contributions',

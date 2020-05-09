@@ -1,6 +1,7 @@
 import { SecteurService } from './../service/secteur.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import * as glob from '../../shared/global';
 
 @Component({
   selector: 'app-main',
