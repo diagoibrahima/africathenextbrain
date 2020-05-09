@@ -9,4 +9,5 @@ import * as glob from '../shared/global';
 })
 export class AppComponent {
 title = 'frontatnbv1';
+
 }

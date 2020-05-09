@@ -16,6 +16,7 @@ export class SecteurViewComponent implements OnInit {
   hashtag: string;
   urlimages = glob.urlimages;
 
+
   contributionList: any;
 
   constructor(private route: ActivatedRoute, private secteurService: SecteurService, private contributionService: ContributionService) { }
