@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-md-12 col-xs-12">
-<div class="btn-group col-md-12 col-xs-12">
+  <div class="col-md-12 col-xs-8">
+<div class="btn-group col-md-12 col-xs-8">
               <button (click)="onPageContributionPrevious()"  class="btn btn-labeled btn-large">
-                <span class=""><i class="fa fa-arrow-left"></i> </span>
+                <span class=""><i class="fa fa-arrow-left"></i></span>
                   Revenir en arrière
               </button>
 
@@ -10,7 +10,7 @@
 
               <button (click)="onPageContributionNext()" class="btn btn-labeled btn-large">
                   Allez au suivant
-                <span class=" align-right"><i class="fa fa-arrow-right " ></i> </span>
+                <span class="align-right"><i class="fa fa-arrow-right"></i></span>
               </button>
 </div>
 
@@ -56,10 +56,10 @@
                           -->
 
                           <div class="col-md-12">
-                              <p>
-                                  <a class="float-left" href=""><strong>{{c.signature}}</strong></a>
+                              <p class="auteurContrib">
+                                  <a class="float-left"><strong>{{c.signature}}</strong></a>
 
-                                  <span class="float-right dateContrib" >{{c.date_contrib | date:'short'}}</span>
+                                  <span class="float-right dateContrib" >{{c.date_contrib | date:'dd/MM/yyyy'}}</span>
 
                             </p>
                             <div class="clearfix"></div>
@@ -68,7 +68,6 @@
                                   <!--<a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
                                   <a target="blank" href="{{urlLinkedin+c.profilRs}}" class="float-right btn text-white btn-primary"><i class="fa fa-linkedin"></i> {{c.signature}}</a>
                                   <a href="#" class="card-link">Lire suite...</a>
-                                  <a href="#" class="card-link">Another link</a>
                             </p>
                           </div>
                       </div>
