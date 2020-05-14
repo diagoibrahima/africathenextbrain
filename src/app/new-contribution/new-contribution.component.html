@@ -1,24 +1,39 @@
-<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="row">
+<div class="col-md-12 remarque">lisez les contributions soumises par les différentes membres du réseau et
+exprimez-vous en donnant vos idées, articles ou propositions pour soutenir le développement de
+l'Afrique dans ce domaine ({{sec}}).
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
 <div  class="panel panel-default">
-  <div class="panel-heading">Nouvelle contribution</div>
+  <div class="panel-heading"></div>
     <div class="panel-body">
 
 
         <form #f="ngForm" (ngSubmit)="onSaveContribution(f.value)">
         <div class="form-group">
-          <label class="control-label">Contribution</label>
-          <input class="form-control" type="text" name="message" ngModel>
+          <label class="control-label"></label>
+          <textarea rows="7" class="form-control" type="text" name="message" ngModel  placeholder="Rédigez votre texte" ></textarea>
         </div>
 
         <div class="form-group">
-          <label class="control-label">Signature</label>
-          <input class="form-control" type="text" name="signature" ngModel>
+          <label class="control-label"></label>
+          <input class="form-control" type="text" name="signature" placeholder="Auteur" ngModel>
         </div>
 
-        <button class="btn btn panel-success" type="submit">Save</button>
+<div class="form-group">
+          <label class="control-label remarque">Votre contribution sera clasée dans le domaine : {{sec}}</label>
+          <input class="form-control" type="hidden"  value="agriculture" name="domaine" ngModel="{{sec}}">
+        </div>
+
+<input   type="hidden" name="date_contrib" ngModel="{{date_contrib}}"/>
+
+        <button class="btn  btn-primary" type="submit">Soumettre</button>
       </form>
     </div>
     <div class="panel-body">
     </div>
 </div>
+</div>
+
 </div>

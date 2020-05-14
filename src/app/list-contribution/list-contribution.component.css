@@ -11,3 +11,22 @@ font-weight: bold;
 font-size: large;
 }
 
+.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.0);border-radius: 3px 0 0 3px;}
+.btn-label2 {position: relative;right: -12px;display: inline-block;padding: 6px 12px;border-radius: 3px 0 0 3px;}
+.btn-labeled {padding-top: 0;padding-bottom: 0; background: rgba(0,0,0,0.15);}
+.btn { margin-bottom:0; }
+
+.dateContrib{
+font-weight: 500;
+font-style: italic;
+}
+.text-white{
+font-size: small;
+}
+.linkedInButton a {
+text-decoration: none;
+}
+
+
+
+

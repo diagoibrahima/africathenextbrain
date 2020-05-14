@@ -1,9 +1,49 @@
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+<div class="btn-group col-md-12 col-xs-12">
+              <button (click)="onPageContributionPrevious()"  class="btn btn-labeled btn-large">
+                <span class=""><i class="fa fa-arrow-left"></i> </span>
+                  Revenir en arrière
+              </button>
 
+              <button (click) = toggleDisplay() class="btn btn-large btn-primary">Ecrire</button>
+
+              <button (click)="onPageContributionNext()" class="btn btn-labeled btn-large">
+                  Allez au suivant
+                <span class=" align-right"><i class="fa fa-arrow-right " ></i> </span>
+              </button>
+</div>
+
+</div>
+
+</div>
+
+<!--
+<div class="row">
+  <div class="col-md-4 my align-left">
+    <button type="button" class="btn btn-labeled btn-default btn-sm" >
+        <span class="btn-label"><i class="fa fa-arrow-left"></i></span>Previous</button>
+  </div>
+
+  <div class="col-md-4 my align-center">
+    <button type="button" class="btn btn-sm  btn-primary">Ecrire</button>
+  </div>
+
+<div class="col-md-4 my align-right">
+    <button type="button"  class="btn btn-labeled btn-default btn-sm" >Next<span class="btn-label2 align-right"><i class="fa fa-arrow-right " ></i></span>
+    </button>
+</div>
+
+</div>
+-->
+<br>
+<app-new-contribution *ngIf = 'isShow' ></app-new-contribution>
+<!--
 <div class="btn-group bout align-center" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary btn-sm " (click)="onPageContributionPrevious()">Previous</button>
   <button type="button" class="btn btn-primary btn-sm" (click)="onPageContributionNext()">Next</button>
 </div>
-
+-->
 
 <div class="card" *ngFor="let c of contributions._embedded.contributions">
                   <div class="card-body">
@@ -15,21 +55,18 @@
                           </div>
                           -->
 
-
                           <div class="col-md-12">
                               <p>
                                   <a class="float-left" href=""><strong>{{c.signature}}</strong></a>
-                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                  <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                                  <span class="float-right dateContrib" >{{c.date_contrib | date:'short'}}</span>
 
                             </p>
                             <div class="clearfix"></div>
                               <p>{{c.message}}</p>
-                              <p>
+                              <p class="linkedInButton">
                                   <!--<a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
-                                  <a routerLink="/" class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                                  <a target="blank" href="{{urlLinkedin+prifillinkedin}}" class="float-right btn text-white btn-primary"><i class="fa fa-linkedin"></i> {{c.signature}}</a>
                                   <a href="#" class="card-link">Lire suite...</a>
                                   <a href="#" class="card-link">Another link</a>
                             </p>

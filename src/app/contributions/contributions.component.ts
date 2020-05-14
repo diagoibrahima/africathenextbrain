@@ -11,7 +11,7 @@ import * as glob from '../../shared/global';
 export class ContributionsComponent implements OnInit {
 
 public contributions: any;
-public size = 5;
+public size = 100;
 public currentPage = 0;
 public totalPages: number;
 public pages: Array<number>;

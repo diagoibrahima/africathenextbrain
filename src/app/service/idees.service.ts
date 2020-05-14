@@ -10,7 +10,7 @@ export class IdeesService {
   constructor(private httpClient: HttpClient) { }
 
   public getContributions(page: number, size: number) {
-  return this.httpClient.get(this.host + '/contributions?page=' + page + '&size=' + size);
+  return this.httpClient.get(this.host + '/contributions?page=' + page + '&size=' + size + '&sort=date_contrib,desc');
 }
 
 public getContributionsByKeyword(mc: string, page: number, size: number) {

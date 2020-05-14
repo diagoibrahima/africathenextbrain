@@ -16,8 +16,11 @@ public currentPage = 0;
 public totalPages: number;
 public pages: Array<number>;
 private currentKeyword: string;
+urlLinkedin = glob.linkedinUrl;
+prifillinkedin = "el-hadji-ibrahima-diago-11729466"
+@Input() sec: string;
 
-
+isShow = false;
 
   constructor(private ideesService: IdeesService) { }
 
@@ -92,5 +95,9 @@ this.chercherContributions();
 }
 
 }
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
 
 }

@@ -15,11 +15,13 @@
 </form>
   <table *ngIf="contributions" class="table tabble-striped">
     <tr>
-      <th>Contribution</th><th>Signature</th>
+      <th>Domaine</th><th>Contribution</th><th>Signature</th><th>Date</th><th></th>
     </tr>
-    <tr *ngFor="let c of contributions._embedded.contributions">
+    <tr *ngFor="let c of contributions._embedded.contributions ">
+      <td>{{c.domaine}}</td>
       <td>{{c.message}}</td>
       <td>{{c.signature}}</td>
+      <td>{{c.date_contrib | date:'short'}}</td>
       <td><a class="btn btn-danger" (click)="onDeleteContribution(c)">Delete</a></td>
     </tr>
   </table>
