@@ -12,17 +12,19 @@ export class NewContributionComponent implements OnInit {
 
   @Input() sec: string;
   date_contrib : number;
+  urlBack : string
   constructor(private ideesService: IdeesService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sec = this.route.snapshot.params['id'];
     this.date_contrib = Date.now();
+
   }
 
   onSaveContribution(data: any) {
 this.ideesService.saveRessource(this.ideesService.host + '/contributions', data)
 .subscribe(res => {
-this.router.navigateByUrl('/contributions');
+this.router.navigateByUrl('/main');
 }, err => {
 console.log(err);
 })

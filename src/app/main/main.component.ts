@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-
+this.router.onSameUrlNavigation = 'reload';
   }
 
 changementDePage(){
