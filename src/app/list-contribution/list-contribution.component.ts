@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { IdeesService } from './../service/idees.service';
 import { ContributionService } from './../service/contribution.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -22,17 +23,19 @@ urlLinkedin = glob.linkedinUrl;
 
 isShow = false;
 
-  constructor(private ideesService: IdeesService) { }
+  constructor(private ideesService: IdeesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     //this.contributionList = this.contributionServive.getContribution();
-
+    this.sec = this.route.snapshot.params['id'];
     this.onGetContributions();
+
+
 
   }
 
   onGetContributions() {
-this.ideesService.getContributions(this.currentPage, this.size)
+this.ideesService.getContributionsBySecteur(this.sec, this.currentPage, this.size)
 .subscribe(data => {
 this.totalPages = data['page'].totalPages;
 this.pages = new Array<number>(this.totalPages);

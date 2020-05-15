@@ -44,10 +44,9 @@
   <button type="button" class="btn btn-primary btn-sm" (click)="onPageContributionNext()">Next</button>
 </div>
 -->
-
-<div class="card" *ngFor="let c of contributions._embedded.contributions">
+<div class="card" *ngFor="let c of contributions._embedded.contributions" >
                   <div class="card-body">
-                      <div class="row">
+                      <div class="row" >
                           <!--
                           <div class="col-md-2">
                               <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
@@ -68,6 +67,8 @@
                                   <!--<a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
                                   <a target="blank" href="{{urlLinkedin+c.profilRs}}" class="float-right btn text-white btn-primary"><i class="fa fa-linkedin"></i> {{c.signature}}</a>
                                   <a href="#" class="card-link">Lire suite...</a>
+                                  <a href="#" class="card-link">{{c.domaine}}</a>
+
                             </p>
                           </div>
                       </div>

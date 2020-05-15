@@ -18,6 +18,11 @@ export class IdeesService {
 public getContributionsByKeyword(mc: string, page: number, size: number) {
   return this.httpClient.get(this.host + '/contributions/search/byMessagePage?mc=' + mc + '&page=' + page + '&size=' + size + '&sort=date_contrib,desc');
 }
+
+public getContributionsBySecteur(mc: string, page: number, size: number) {
+  return this.httpClient.get(this.host + '/contributions/search/byDomainePage?mc=' + mc + '&page=' + page + '&size=' + size + '&sort=date_contrib,desc');
+}
+
 public deleteRessource(url) {
   return this.httpClient.delete(url);
 }
