@@ -48,11 +48,11 @@ this.contributions = data;
 
 onPageContributionNext() {
 
-
+      if(this.currentPage<this.totalPages-1){
       this.currentPage = this.currentPage + 1;
       this.onGetContributions();
       console.log(this.currentPage);
-
+      }
 
 
 
@@ -60,7 +60,7 @@ onPageContributionNext() {
 }
 
 onPageContributionPrevious() {
-while(this.currentPage>0){
+if(this.currentPage>0){
   this.currentPage = this.currentPage - 1;
   this.onGetContributions();
   console.log(this.currentPage)

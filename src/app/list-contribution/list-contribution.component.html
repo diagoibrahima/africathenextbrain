@@ -17,6 +17,7 @@
 </div>
 
 </div>
+<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}}</div>
 
 <!--
 <div class="row">
@@ -44,7 +45,9 @@
   <button type="button" class="btn btn-primary btn-sm" (click)="onPageContributionNext()">Next</button>
 </div>
 -->
-<div class="card" *ngFor="let c of contributions._embedded.contributions" >
+<div class="badge  align-center col-md-12" *ngIf="totalPages===0">Pas de contibution enregistrée dans ce domaine</div>
+
+<div class="card" *ngFor="let c of contributions._embedded.contributions"  >
                   <div class="card-body">
                       <div class="row" >
                           <!--
