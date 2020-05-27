@@ -1,3 +1,4 @@
+import { AlertService } from './../_alert/alert.service';
 import { IdeesService } from './../service/idees.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,21 +14,25 @@ export class NewContributionComponent implements OnInit {
   @Input() sec: string;
   date_contrib : number;
   urlBack : string
+@Input() isShow: boolean;
+
   constructor(private ideesService: IdeesService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sec = this.route.snapshot.params['id'];
     this.date_contrib = Date.now();
-
   }
 
   onSaveContribution(data: any) {
 this.ideesService.saveRessource(this.ideesService.host + '/contributions', data)
 .subscribe(res => {
-this.router.navigateByUrl('/main');
+this.isShow = this.ideesService.toggleDisplay(this.isShow);
+this.router.onSameUrlNavigation = 'reload';
+
+//alert("Success Adding");
+
 }, err => {
 console.log(err);
 })
 }
-
 }

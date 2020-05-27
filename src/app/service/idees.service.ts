@@ -9,6 +9,7 @@ import * as glob from '../../shared/global';
 export class IdeesService {
 
   public host = glob.host;
+isShow: boolean;
   constructor(private httpClient: HttpClient) { }
 
   public getContributions(page: number, size: number) {
@@ -30,5 +31,9 @@ public deleteRessource(url) {
 public saveRessource(url, data) {
   return this.httpClient.post(url, data);
 }
+
+ toggleDisplay(isShow) {
+    return  !isShow;
+  }
 
 }

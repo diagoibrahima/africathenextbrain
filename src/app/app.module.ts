@@ -14,6 +14,8 @@ import { SecteurComponent } from './secteur/secteur.component';
 import { SecteurViewComponent } from './secteur-view/secteur-view.component';
 import { ListContributionComponent } from './list-contribution/list-contribution.component';
 import { ContributionService } from './service/contribution.service';
+import { AlertModule } from './_alert';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -27,10 +29,11 @@ import { ContributionService } from './service/contribution.service';
     SecteurComponent,
     SecteurViewComponent,
     ListContributionComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule
+    AppRoutingModule, HttpClientModule, FormsModule,AlertModule
   ],
   providers: [SecteurService, ContributionService],
   bootstrap: [AppComponent]

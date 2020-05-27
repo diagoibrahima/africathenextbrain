@@ -1,0 +1,53 @@
+<div class="container">
+<!--
+<div class="row">
+  <div class="col-md-12 ">
+<form class="form-inline" #f="ngForm" (ngSubmit)=onLogin(f.value)>
+  <div class="form-group  col-md-4 col-sm">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text"  id="staticEmail2" placeholder="email" name="username" ngModel>
+  </div>
+ <div class="form-group col-md-3  col-sm">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="password" name="password" placeholder="password" id="staticEmail2" value="email@example.com" ngModel>
+  </div>
+  <button type="submit" class="btn btn-primary col-md-2  col-sm ">Connexion</button>
+</form>
+  </div>
+</div>
+-->
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <div *ngIf="authService.isAuthenticated">
+      je suis admin
+    </div>
+    <!-- Icon -->
+    <div class="" >
+      <a class="underlineHover" href="#"><h2>Connectez-vous</h2></a>
+    </div>
+
+    <!-- Login Form -->
+    <form #f="ngForm" (ngSubmit)=onLogin(f.value)>
+      <input type="text" id="login" class="" name="username" ngModel placeholder="login">
+      <input type="text" id="password" class="" name="password" ngModel placeholder="password">
+      <button type="submit" class="btn btn-primary ">Connexion</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+

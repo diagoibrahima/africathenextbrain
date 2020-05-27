@@ -6,19 +6,24 @@
                   Précédent
               </button>
 
-              <button (click) = toggleDisplay() class="btn btn-large btn-primary">Ecrire</button>
+              <button (click) = toggleDisplay(isShow,isconnected) class="btn btn-large btn-primary">Ecrire</button>
 
               <button (click)="onPageContributionNext()" class="btn btn-labeled btn-large">
                   Suivant
                 <span class="align-right"><i class="fa fa-arrow-right"></i></span>
               </button>
 </div>
-
 </div>
 
 </div>
-<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}}</div>
 
+<!--<alert></alert>
+<button class="btn btn-success m-1" (click)="alertService.success('Success!!', autoClose=true)">Success</button>
+<button class="btn btn-danger m-1" (click)="alertService.error('Error :(', autoClose=false)">Error</button>
+<button class="btn btn-info m-1" (click)="alertService.info('Some info....', options.autoClose=true)">Info</button>
+<button class="btn btn-warning m-1" (click)="alertService.warn('Warning: ...', options.autoClose=false)">Warn</button>
+<button class="btn btn-outline-dark m-1" (click)="alertService.clear()">Clear</button>
+-->
 <!--
 <div class="row">
   <div class="col-md-4 my align-left">
@@ -38,7 +43,9 @@
 </div>
 -->
 <br>
-<app-new-contribution *ngIf = 'isShow' ></app-new-contribution>
+<app-new-contribution *ngIf ="authService.isAuthenticated && isShow"></app-new-contribution>
+<app-login *ngIf ="!authService.isAuthenticated && isShow"></app-login>
+<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}}</div>
 <!--
 <div class="btn-group bout align-center" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary btn-sm " (click)="onPageContributionPrevious()">Previous</button>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as glob from '../shared/global';
+import { AuhtenticationService } from './service/auhtentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,15 @@ import * as glob from '../shared/global';
   styleUrls: ['./app.component.css'],
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 title = 'frontatnbv1';
+
+constructor(private authService:AuhtenticationService){
+
+}
+
+ngOnInit(): void {
+  this.authService.loadAuthenticatedUserFromLocalStorage();
+}
 
 }

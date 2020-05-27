@@ -1,3 +1,5 @@
+import { AuhtenticationService } from './../service/auhtentication.service';
+import { AlertService } from './../_alert/alert.service';
 import { ActivatedRoute } from '@angular/router';
 import { IdeesService } from './../service/idees.service';
 import { ContributionService } from './../service/contribution.service';
@@ -11,6 +13,11 @@ import * as glob from '../../shared/global';
 })
 export class ListContributionComponent implements OnInit {
 
+
+
+
+
+
 public contributions: any;
 public size = 2;
 public currentPage = 0;
@@ -19,14 +26,20 @@ public pages: Array<number>;
 private currentKeyword: string;
 urlLinkedin = glob.linkedinUrl;
 
+
 @Input() sec: string;
 
 isShow = false;
+isconnected=true;
 
-  constructor(private ideesService: IdeesService, private route: ActivatedRoute) { }
+  constructor(protected ideesService: IdeesService,
+              private route: ActivatedRoute,
+              protected alertService: AlertService, protected authService: AuhtenticationService) { }
 
   ngOnInit() {
     //this.contributionList = this.contributionServive.getContribution();
+    this.isShow=false;
+    this.isconnected=true;
     this.sec = this.route.snapshot.params['id'];
     this.onGetContributions();
 
@@ -99,8 +112,14 @@ this.chercherContributions();
 
 }
 
-  toggleDisplay() {
-    this.isShow = !this.isShow;
+  toggleDisplay(isShow, isconnected) {
+   this.isShow=this.ideesService.toggleDisplay(this.isShow)
+   this.isconnected=this.ideesService.toggleDisplay(this.isconnected)
+
+      console.log("isShow: " + this.isShow)
+      console.log("isisconnected: " + this.isconnected)
   }
+
+
 
 }

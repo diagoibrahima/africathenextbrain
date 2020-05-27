@@ -1,7 +1,8 @@
+import { AuhtenticationService } from './../service/auhtentication.service';
 import { ContributionService } from './../service/contribution.service';
 import { SecteurService } from './../service/secteur.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as glob from '../../shared/global';
 
 @Component({
@@ -19,7 +20,10 @@ export class SecteurViewComponent implements OnInit {
 
   contributionList: any;
 
-  constructor(private route: ActivatedRoute, private secteurService: SecteurService, private contributionService: ContributionService) { }
+  constructor(private route: ActivatedRoute, private secteurService: SecteurService,
+              private contributionService: ContributionService,
+              private router:Router,
+              public authService:AuhtenticationService) { }
 
   ngOnInit() {
   this.sec = this.route.snapshot.params['id'];
@@ -33,6 +37,11 @@ export class SecteurViewComponent implements OnInit {
 
 onChangePage(){
 
+}
+
+onLogout(){
+      this.authService.removeTokenFromLocalStorage();
+      this.router.navigateByUrl('/');
 }
 
 

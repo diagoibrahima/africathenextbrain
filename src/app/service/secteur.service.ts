@@ -19,7 +19,7 @@ secteurList: Array<Secteur> = ([
   { id: 9, secteur: 'Economie', image: 'pic09.jpg', ind:'ind09.jpg', hashtag:'#atnbeco'},
   { id: 10, secteur: 'Commerce', image: 'pic12.jpg', ind:'ind12.jpg', hashtag:'#atnbcom'},
   { id: 11, secteur: 'Tourisme', image: 'pic11.jpg', ind:'ind11.jpg', hashtag:'#atnbtou'},
-  { id: 12, secteur: 'ArtCulture', image: 'pic10.jpg', ind:'ind10.jpg', hashtag:'#atnbart'},
+  { id: 12, secteur: 'Art & Culture', image: 'pic10.jpg', ind:'ind10.jpg', hashtag:'#atnbart'},
   { id: 13, secteur: 'Technologie', image: 'pic13.jpg', ind:'ind13.jpg', hashtag:'#atnbtec'},
   { id: 14, secteur: 'Politique', image: 'pic14.jpg', ind:'ind14.jpg', hashtag:'#atnbpol'},
   { id: 15, secteur: 'Elevage', image: 'pic15.jpg', ind:'ind15.jpg', hashtag:'#atnbele'},
