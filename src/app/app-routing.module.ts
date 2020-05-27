@@ -1,3 +1,4 @@
+import { AproposComponent } from './apropos/apropos.component';
 import { SecteurViewComponent } from './secteur-view/secteur-view.component';
 
 import { MainComponent } from './main/main.component';
@@ -24,7 +25,10 @@ const routes: Routes = [
 },
   {
     path: '', redirectTo:'main', pathMatch:'full'
-  }
+  },
+{
+    path: 'apropos', component: AproposComponent
+  },
 ];
 
 @NgModule({

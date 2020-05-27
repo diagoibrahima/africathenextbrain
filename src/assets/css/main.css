@@ -1322,7 +1322,7 @@ color: #FFF;
 
 			#header.hide .button.hidden, #header.preview .button.hidden {
 				text-decoration: none;
-				padding-top: 1.5em;
+				padding-top: 0em;
 				padding-left: 0;
 				padding-right: 0;
 				background: none;

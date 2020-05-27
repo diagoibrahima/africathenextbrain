@@ -16,6 +16,7 @@ import { ListContributionComponent } from './list-contribution/list-contribution
 import { ContributionService } from './service/contribution.service';
 import { AlertModule } from './_alert';
 import { LoginComponent } from './login/login.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     SecteurViewComponent,
     ListContributionComponent,
     LoginComponent,
+    AproposComponent,
   ],
   imports: [
     BrowserModule,
