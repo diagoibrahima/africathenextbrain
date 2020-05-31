@@ -17,18 +17,18 @@ const routes: Routes = [
   {
     path: 'new-contribution', component: NewContributionComponent
   },
-{
-    path: 'main', component: MainComponent
-  },
-{
-  path: 'secteur/:id', component: SecteurViewComponent
-},
   {
-    path: '', redirectTo:'main', pathMatch:'full'
+      path: 'main', component: MainComponent
+    },
+  {
+    path: 'secteur/:id', component: SecteurViewComponent
   },
-{
-    path: 'apropos', component: AproposComponent
-  },
+    {
+      path: '', redirectTo:'main', pathMatch:'full'
+    },
+  {
+      path: 'apropos', component: AproposComponent
+    },
 ];
 
 @NgModule({
