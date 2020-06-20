@@ -22,7 +22,7 @@ public getContributionsBySecteur(mc: string, page: number, size: number) {
 */
 
 public getContributionsBySecteur(mc: string, page: number, size: number) {
-  return this.http.get(glob.host+"/listContributionsByDomaine?mc=" + mc + "&page=" + page + "&size=" + size );
+  return this.http.get(glob.host+"listContributionsByDomaine?mc=" + mc + "&page=" + page + "&size=" + size );
 }
 
 public getContributionsByUser(mc: string, page: number, size: number) {
