@@ -1,17 +1,19 @@
-		<!-- Header -->
-			<header id="header" class="preview">
+<div class="entete">
+  <a href="" class="logo">Africa the next brain</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="#">Nos Ateliers</a></li>
+    <li><a href="/apropos">A propos</a></li>
+    <li *ngIf="securityService.kc.authenticated"><a href="/profil">{{securityService.kc.tokenParsed.name | slice:0:5 | uppercase}}</a></li>
+    <li *ngIf="!securityService.kc.authenticated"><a class="clickable" (click)="onLogin()">Connexion</a></li>
+    <li *ngIf="securityService.kc.authenticated"><a class="clickable" (click)="onLogout()">Deconexion</a></li>
+    <li ><a href="#">Contact</a></li>
+  </ul>
+</div>
+			<div id="preview" class="vertical"><br><br>
 				<div class="inner">
-					<div class="content">
-						<h1></h1>
-						<h2></h2>
-					</div><br>
-					<a href="" class="button hidden"><span></span></a>
-				</div>
-			</header>
-		<!-- Main -->
-			<div id="preview" class="vertical">
-				<div class="inner">
-					<div class="image fit">
+					<div class="image fit"><br>
 						<img src="../../assets/images/diago.jpg" alt="" />
               <div><br>
                     <p class="textapropos ">Personnellement je pense que l’Afrique doit tirer beaucoup de leçons à la sortie de cette pandémie et cela dans tous les secteurs.

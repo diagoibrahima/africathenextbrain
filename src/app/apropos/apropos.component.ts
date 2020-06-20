@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KeycloakSecurityService } from '../services/keycloak-security.service';
 
 @Component({
   selector: 'app-apropos',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AproposComponent implements OnInit {
 
-  constructor() { }
+  constructor(public securityService:KeycloakSecurityService) { }
 
   ngOnInit() {
   }
+
+onChangePassword(){
+this.securityService.kc.accountManagement();
+}
+
+onLogout(){
+     this.securityService.kc.logout();
+    
+}
+
+onLogin(){
+     this.securityService.kc.login();
+    //this.router.navigate(['/profil']);
+}
 
 }

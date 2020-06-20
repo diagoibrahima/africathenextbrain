@@ -48,14 +48,14 @@
 <br>
 <app-new-contribution *ngIf ="isShow"></app-new-contribution>
 <app-login *ngIf ="isShow2"></app-login>
-<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}} </div>
+<div *ngIf="totalPages!=0" class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}} </div>
 <!--
 <div class="btn-group bout align-center" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary btn-sm " (click)="onPageContributionPrevious()">Previous</button>
   <button type="button" class="btn btn-primary btn-sm" (click)="onPageContributionNext()">Next</button>
 </div>
 -->
-<div class="badge  align-center col-md-12" *ngIf="totalPages===0">Pas de contibution enregistrée dans ce domaine</div>
+<div class="badge  align-center col-md-12" *ngIf="totalPages===0">Pas de contibution enregistrée sur ce thème</div>
 <div class="text-danger" *ngIf="errorMessage">
 <h3 class="align-center">{{errorMessage}}</h3>
 </div>
@@ -93,7 +93,7 @@
                     <a href="detail2.html" class="nav next"><span class="fa fa-chevron-right"></span></a> -->
                   </div>
 </div>
-<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}} </div>
+<div *ngIf="totalPages!=0" class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}} </div>
 <div class="row">
   <div class="col-md-12 col-xs-8">
 <div class="btn-group col-md-12 col-xs-8">

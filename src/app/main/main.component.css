@@ -8,3 +8,150 @@ color: white;
 }
 
 
+/* entete */
+
+.entete {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.entete ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.entete li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.entete li a:hover,
+.entete .menu-btn:hover {
+  
+}
+
+.entete .logo {
+
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 50px;
+  text-decoration: none;
+font-weight: 500;
+}
+
+/* menu */
+
+.entete .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.entete .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.entete .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.entete .menu-icon .navicon:before,
+.entete .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.entete .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.entete .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.entete .menu-btn {
+  display: none;
+}
+
+.entete .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.entete .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.entete .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.entete .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.entete .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.entete .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+
+
+  .entete li {
+    float: left;
+  }
+  .entete li a {
+    padding: 20px 30px;
+  }
+  .entete .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .entete .menu-icon {
+    display: none;
+  }
+
+}
+
+.menu a{
+color: #e74c3c;
+}
+.menu a:hover{
+color: #3a7bc8;
+}
+.clickable{
+cursor: pointer;
+}

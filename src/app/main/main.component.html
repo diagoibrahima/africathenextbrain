@@ -12,6 +12,20 @@
 				</div>
 </header>
 -->
+
+<div class="entete">
+  <a href="" class="logo">Africa the next brain</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="#">Nos Ateliers</a></li>
+    <li><a href="/apropos">A propos</a></li>
+    <li *ngIf="securityService.kc.authenticated"><a href="/profil">{{securityService.kc.tokenParsed.name | slice:0:5 | uppercase}}</a></li>
+    <li *ngIf="!securityService.kc.authenticated"><a class="clickable" (click)="onLogin()">Connexion</a></li>
+    <li *ngIf="securityService.kc.authenticated"><a class="clickable" (click)="onLogout()">Deconexion</a></li>
+    <li ><a href="#">Contact</a></li>
+  </ul>
+</div>
 <div class="container-fluid">
 <div id="main">
 				<div class="inner">

@@ -3,33 +3,35 @@
               <div class="image fit" id="imagesec">
                 <div >
                   <p class="centered" > </p>
-                  <div class="profil">
+                  <div class="profil"> <a href="/" class="fa fa-home iconhome"> </a> / 
 <span class="pname">{{securityService.kc.tokenParsed['name']}}</span><hr style="margin:0px auto">
 <span class="pemail">{{securityService.kc.tokenParsed['email']}}</span> 
 </div>
 
                     <div id="header2">
-                           
+                          
                     </div>
                      <div id="header3">
-                            <div class="inner">
+                            <div class="inner"><br>
                             <!--<a *ngIf="authService.isAuthenticated" href="" (click)="onLogout()" class="iconhome2">Deconnexion</a> -->
                             <!-- <a *ngIf="!authService.isAuthenticated" href="" (click)="onLogout()" class="iconhome2">Connexion</a>-->
 
                             <!-- <a *ngIf="securityService.kc.authenticated" href="" (click)="onLogout()" class="iconhome2">{{securityService.kc.tokenParsed.name}}</a>-->          
-                            <span *ngIf="securityService.kc.authenticated" class="nomUser">{{securityService.kc.tokenParsed.name | slice:0:6 | uppercase}}</span>
+                            <!--<span *ngIf="securityService.kc.authenticated" class="nomUser">{{securityService.kc.tokenParsed.name | slice:0:6 | uppercase}}</span>-->  
                             <a  type="button" class="" onclick="openNav()"><i class="fa fa-bars openbtn"></i></a>
   </div>
 </div>
               
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a *ngIf="securityService.kc.authenticated" class="clickable"  >{{securityService.kc.tokenParsed.name}} </a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable" >{{securityService.kc.tokenParsed.name}} </a>
   <a *ngIf="securityService.kc.authenticated" href="/profil" class="clickable" >Mes contributions</a>
-  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onLogout()">Deconnexion</a>
   <a *ngIf="!securityService.kc.authenticated" class="clickable"  (click)="onLogin()">Connexion</a>
+  <a  class="clickable" href="/apropos"  (click)="onLogin()">Nos ateliers</a>
   <a  class="clickable" href="/apropos"  (click)="onLogin()">A propos de ATNB</a>
-  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onChangePassword()">Changer Password</a>
+  <a  class="clickable" href="/apropos"  (click)="onLogin()">Contact</a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onChangePassword()">Parametres</a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onLogout()">Deconnexion</a>
 </div>
 
 </div>
@@ -50,7 +52,7 @@
 
               </div><br>
               -->
-
+<div class=" align-center col-md-12">Choisisez un thème et xprimez-vous en donnant vos idées pour soutenir le développement de l'Afrique dans ce domaine.</div><br>
            <app-list-contribution-by-user></app-list-contribution-by-user>
             
 

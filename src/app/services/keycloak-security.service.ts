@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {KeycloakInstance} from "keycloak-js";
-
+import * as glob from '../../shared/global';
 declare var Keycloak:any;
 
 @Injectable({
@@ -15,9 +15,9 @@ export class KeycloakSecurityService {
   public async init(){
     console.log("Security Initilalisation....................");
     this.kc=new Keycloak({
-      url:"https://atnbauth.herokuapp.com/auth/",
-      realm:"atnb-realm",
-      clientId:"AngularAtnbApp"
+      url:glob.url_server_auth,
+      realm:glob.realm,
+      clientId:glob.clientId
     });
     await this.kc.init({
         //Cette attribut parmet de demander une authentification au demarrage de l'app
@@ -28,7 +28,6 @@ export class KeycloakSecurityService {
       pas besion de demander une authentification il le fera diretement avec le token disponible
       */
      onLoad:"check-sso"
-
     //promiseType:"native" seems to be deprecated
     });
       console.log(this.kc.token);
