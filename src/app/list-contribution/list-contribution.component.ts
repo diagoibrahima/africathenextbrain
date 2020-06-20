@@ -5,6 +5,8 @@ import { IdeesService } from './../service/idees.service';
 import { ContributionService } from './../service/contribution.service';
 import { Component, OnInit, Input } from '@angular/core';
 import * as glob from '../../shared/global';
+import { KeycloakSecurityService } from '../services/keycloak-security.service';
+import { ContributionsService } from '../services/contributions.service';
 
 @Component({
   selector: 'app-list-contribution',
@@ -19,43 +21,74 @@ export class ListContributionComponent implements OnInit {
 
 
 public contributions: any;
-public size = 2;
+public suppliers: any;
+public size = 5;
 public currentPage = 0;
 public totalPages: number;
 public pages: Array<number>;
 private currentKeyword: string;
 urlLinkedin = glob.linkedinUrl;
-
+ public errorMessage: any;
 
 @Input() sec: string;
 
-isShow = false;
-isconnected=true;
+isShow:boolean;
+isShow2:boolean;
+ public agentProfile: any = {};
+
 
   constructor(protected ideesService: IdeesService,
               private route: ActivatedRoute,
-              protected alertService: AlertService, protected authService: AuhtenticationService) { }
+              protected alertService: AlertService, 
+              protected authService: AuhtenticationService, 
+              protected securityService:KeycloakSecurityService,
+              private contributionsService:ContributionsService) { }
 
   ngOnInit() {
     //this.contributionList = this.contributionServive.getContribution();
-    this.isShow=false;
-    this.isconnected=true;
     this.sec = this.route.snapshot.params['id'];
-    this.onGetContributions();
-
-
+  
+  // if(this.securityService.kc.authenticated) this.onGetContributions();
+  /*  this.contributionsService.getContributions()
+      .subscribe(data=>{
+          this.contributions=data;
+        },err=>{
+          console.log(err);
+        });
+*/
+/*if(this.securityService.kc.authenticated){
+      this.contributionsService.getContributions()
+      .subscribe(data=>{
+        this.suppliers=data;
+        }, err=>{  
+          this.errorMessage=err.error.message;    
+    });
+}*/
+/*if(this.securityService.kc.authenticated){
+      this.contributionsService.getContributions()
+      .subscribe(data=>{
+        this.contributions=data;
+        }, err=>{  
+          this.errorMessage=err.error.message;    
+    });
+}*/
+this.onGetContributions();
+if(this.securityService.kc.authenticated){
+this.securityService.kc.loadUserProfile().then(user => {
+            this.agentProfile = user;
+        })
+}
 
   }
 
   onGetContributions() {
-this.ideesService.getContributionsBySecteur(this.sec, this.currentPage, this.size)
+this.contributionsService.getContributionsBySecteur(this.sec, this.currentPage, this.size)
 .subscribe(data => {
-this.totalPages = data['page'].totalPages;
+this.totalPages = data['totalPages'];
 this.pages = new Array<number>(this.totalPages);
 this.contributions = data;
-
   }, err => {
-  console.log(err);
+  this.errorMessage=err.error.message;
   });
 }
 
@@ -90,7 +123,7 @@ this.chercherContributions();
 chercherContributions() {
 this.ideesService.getContributionsByKeyword(this.currentKeyword, this.currentPage, this.size)
 .subscribe(data => {
-this.totalPages = data['page'].totalPages;
+this.totalPages = data['totalPages'];
 this.pages = new Array<number>(this.totalPages);
 this.contributions = data;
 
@@ -112,12 +145,28 @@ this.chercherContributions();
 
 }
 
-  toggleDisplay(isShow, isconnected) {
-   this.isShow=this.ideesService.toggleDisplay(this.isShow)
-   this.isconnected=this.ideesService.toggleDisplay(this.isconnected)
+  toggleDisplay() {
+  if(this.securityService.kc.authenticated){
+       if(this.isShow==true){
+          this.isShow=false;
+        }else{
+          this.isShow=true;
+        }
+        console.log(this.isShow);
+    }else{
+      console.log("Get login");
+       if(this.isShow2==true){
+          this.isShow2=false;
+        }else{
+          this.isShow2=true;
+        }
+      //this.securityService.kc.login();
+}
+  
+   //this.isconnected=this.ideesService.toggleDisplay(this.isconnected)
 
-      console.log("isShow: " + this.isShow)
-      console.log("isisconnected: " + this.isconnected)
+     // console.log("isShow: " + this.isShow)
+      //console.log("isisconnected: " + this.isconnected)
   }
 
 

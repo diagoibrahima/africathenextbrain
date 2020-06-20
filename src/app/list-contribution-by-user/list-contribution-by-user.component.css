@@ -18,8 +18,8 @@ font-size: large;
 
 .dateContrib{
 font-weight: 500;
-
-font-size: 15px;
+font-style: italic;
+font-size: small;
 }
 .text-white{
 font-size: small;
@@ -32,9 +32,13 @@ font-size: small;
 }
 
 
-
-
 .btn-primary{
 background-color: #3a7bc8;
 border-color: #3a7bc8;
 }
+.badge-primary{
+
+background-color: #3a7bc8;
+
+}
+

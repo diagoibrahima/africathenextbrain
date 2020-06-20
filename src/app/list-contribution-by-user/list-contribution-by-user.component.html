@@ -1,5 +1,4 @@
 
-
 <div class="row">
   <div class="col-md-12 col-xs-8">
 <div class="btn-group col-md-12 col-xs-8">
@@ -9,7 +8,7 @@
               </button>
 
               <!-- <button (click) = toggleDisplay(isShow,isconnected) class="btn btn-large btn-primary">Ecrire</button>-->
-              <button (click) = toggleDisplay() class="btn btn-large btn-primary">Ecrire</button>
+              <button (click) = gomenu() class="btn btn-large btn-primary">Choisir un theme</button>
 
               <button (click)="onPageContributionNext()" class="btn btn-labeled btn-large">
                   Suivant
@@ -81,9 +80,16 @@
                               <p>{{c.message}}</p>
                               <p class="linkedInButton">
                                   <!--<a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
-                                  <a target="blank" href="{{urlLinkedin+c.profilRs}}" class="float-right btn text-white btn-primary btn-sm"><i class="fa fa-linkedin"></i> {{c.signature}}</a>
-                                  <a href="#" class="card-link">Lire suite...</a>
-                                  <a href="#" class="card-link">{{c.domaine}}</a>
+                                  <a target="blank" href="" class="float-right btn text-white btn-primary"><i class="fa fa-linkedin"></i> {{c.signature}}</a>
+                                  
+                                 
+<span class="badge badge-primary">{{c.domaine}}</span>
+
+                            </p>
+                              <p class="linkedInButton">
+                                 
+                                  <a  href="#"  class="card-link">Editer</a>
+                                  <a (click)= onDelete(c.id) class="card-link">Supprimer</a>
 
                             </p>
                           </div>
@@ -92,26 +98,6 @@
                     <!-- <a href="detail1.html" class="nav previous"><span class="fa fa-chevron-left"></span></a>
                     <a href="detail2.html" class="nav next"><span class="fa fa-chevron-right"></span></a> -->
                   </div>
-</div>
-<div class="col-md-12 align-center"> {{currentPage+1}} / {{totalPages}} </div>
-<div class="row">
-  <div class="col-md-12 col-xs-8">
-<div class="btn-group col-md-12 col-xs-8">
-              <button (click)="onPageContributionPrevious()"  class="btn btn-labeled btn-sm">
-                <span class=""><i class="fa fa-arrow-left"></i></span>
-                  
-              </button>
-
-              <!-- <button (click) = toggleDisplay(isShow,isconnected) class="btn btn-large btn-primary">Ecrire</button>-->
-            
-
-              <button (click)="onPageContributionNext()" class="btn btn-labeled btn-sm">
-                  
-                <span class="align-right"><i class="fa fa-arrow-right"></i></span>
-              </button>
-</div>
-</div>
-
 </div>
 
 

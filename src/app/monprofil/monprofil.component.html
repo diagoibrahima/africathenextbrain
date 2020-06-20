@@ -1,0 +1,58 @@
+<div id="preview">
+				<div class="inner">
+              <div class="image fit" id="imagesec">
+                <div >
+                  <p class="centered" > </p>
+                  <div class="profil">
+<span class="pname">{{securityService.kc.tokenParsed['name']}}</span><hr style="margin:0px auto">
+<span class="pemail">{{securityService.kc.tokenParsed['email']}}</span> 
+</div>
+
+                    <div id="header2">
+                           
+                    </div>
+                     <div id="header3">
+                            <div class="inner">
+                            <!--<a *ngIf="authService.isAuthenticated" href="" (click)="onLogout()" class="iconhome2">Deconnexion</a> -->
+                            <!-- <a *ngIf="!authService.isAuthenticated" href="" (click)="onLogout()" class="iconhome2">Connexion</a>-->
+
+                            <!-- <a *ngIf="securityService.kc.authenticated" href="" (click)="onLogout()" class="iconhome2">{{securityService.kc.tokenParsed.name}}</a>-->          
+                            <span *ngIf="securityService.kc.authenticated" class="nomUser">{{securityService.kc.tokenParsed.name | slice:0:6 | uppercase}}</span>
+                            <a  type="button" class="" onclick="openNav()"><i class="fa fa-bars openbtn"></i></a>
+  </div>
+</div>
+              
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable"  >{{securityService.kc.tokenParsed.name}} </a>
+  <a *ngIf="securityService.kc.authenticated" href="/profil" class="clickable" >Mes contributions</a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onLogout()">Deconnexion</a>
+  <a *ngIf="!securityService.kc.authenticated" class="clickable"  (click)="onLogin()">Connexion</a>
+  <a  class="clickable" href="/apropos"  (click)="onLogin()">A propos de ATNB</a>
+  <a *ngIf="securityService.kc.authenticated" class="clickable"  (click)="onChangePassword()">Changer Password</a>
+</div>
+
+</div>
+
+                <img src="../../assets/images/profil.jpg" alt="" />
+
+              </div><br>
+
+              <!--
+              <div class="row">
+              <div class="col-md-12">
+                <form>
+										<textarea placeholder="Donnez votre contribution" ></textarea>
+                    <input type="text" class="form-control col-md-4" id="formGroupExampleInput" placeholder="Signature"><br>
+										<button type="submit" class="btn btn-primary btn-sm btnsub">Soumettre</button>
+								</form>
+              </div>
+
+              </div><br>
+              -->
+
+           <app-list-contribution-by-user></app-list-contribution-by-user>
+            
+
+  </div>
+

@@ -1,3 +1,4 @@
+import { KeycloakSecurityService } from './../services/keycloak-security.service';
 import { AuhtenticationService } from './../service/auhtentication.service';
 import { ContributionService } from './../service/contribution.service';
 import { SecteurService } from './../service/secteur.service';
@@ -23,7 +24,8 @@ export class SecteurViewComponent implements OnInit {
   constructor(private route: ActivatedRoute, private secteurService: SecteurService,
               private contributionService: ContributionService,
               private router:Router,
-              public authService:AuhtenticationService) { }
+              public authService:AuhtenticationService,
+              public securityService:KeycloakSecurityService) { }
 
   ngOnInit() {
   this.sec = this.route.snapshot.params['id'];
@@ -38,11 +40,25 @@ export class SecteurViewComponent implements OnInit {
 onChangePage(){
 
 }
-
+/*
 onLogout(){
       this.authService.removeTokenFromLocalStorage();
       this.router.navigateByUrl('/');
 }
+*/
 
+onChangePassword(){
+this.securityService.kc.accountManagement();
+}
+
+onLogout(){
+     this.securityService.kc.logout();
+    
+}
+
+onLogin(){
+     this.securityService.kc.login();
+    this.router.navigate(['/profil']);
+}
 
 }

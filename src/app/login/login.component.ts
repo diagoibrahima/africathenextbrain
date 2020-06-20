@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { logging } from 'protractor';
 import { AuhtenticationService } from './../service/auhtentication.service';
 import { Component, OnInit } from '@angular/core';
+import { KeycloakSecurityService } from '../services/keycloak-security.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authService:AuhtenticationService, private router:Router) { }
+  constructor(public authService:AuhtenticationService, 
+              private router:Router,
+              private securityService:KeycloakSecurityService) { }
 
   ngOnInit() {
   }
@@ -21,6 +24,9 @@ onLogin(dataForm:any){
       this.authService.saveAutntenticatedUser();
       //this.router.navigateByUrl('');
     }
+}
+onLogin2(){
+    this.securityService.kc.login();
 }
 
 }

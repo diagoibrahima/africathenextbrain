@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row fadeIn">
 <div class="col-md-12 remarque">Lisez les contributions soumises par les différents membres du réseau et
 exprimez-vous en donnant vos idées, articles ou propositions pour soutenir le développement de
 l'Afrique dans ce domaine ({{sec}}).
@@ -18,7 +18,8 @@ l'Afrique dans ce domaine ({{sec}}).
 
         <div class="form-group">
           <label class="control-label"></label>
-          <input class="form-control" type="text" name="signature" placeholder="Auteur" ngModel>
+          <input class="form-control" type="hidden" name="signature"  ngModel={{securityService.kc.tokenParsed.name}}>
+          <input class="form-control" type="hidden" name="idUser" ngModel={{securityService.kc.tokenParsed.user_id}}>
         </div>
 
 

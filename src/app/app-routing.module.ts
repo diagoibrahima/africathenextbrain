@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ContributionsComponent} from './contributions/contributions.component';
 import {NewContributionComponent} from './new-contribution/new-contribution.component';
+import { MonprofilComponent } from './monprofil/monprofil.component';
 
 
 
@@ -28,6 +29,9 @@ const routes: Routes = [
     },
   {
       path: 'apropos', component: AproposComponent
+    },
+{
+      path: 'profil', component: MonprofilComponent
     },
 ];
 

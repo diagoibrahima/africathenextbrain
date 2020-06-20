@@ -3,6 +3,7 @@ import { IdeesService } from './../service/idees.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as glob from '../../shared/global';
+import { KeycloakSecurityService } from '../services/keycloak-security.service';
 
 @Component({
   selector: 'app-new-contribution',
@@ -16,7 +17,7 @@ export class NewContributionComponent implements OnInit {
   urlBack : string
 @Input() isShow: boolean;
 
-  constructor(private ideesService: IdeesService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private ideesService: IdeesService, private router: Router, private route: ActivatedRoute, public securityService:KeycloakSecurityService) { }
 
   ngOnInit() {
     this.sec = this.route.snapshot.params['id'];
@@ -24,7 +25,7 @@ export class NewContributionComponent implements OnInit {
   }
 
   onSaveContribution(data: any) {
-this.ideesService.saveRessource(this.ideesService.host + '/contributions', data)
+this.ideesService.saveRessource(glob.host+'contributions', data)
 .subscribe(res => {
 this.isShow = this.ideesService.toggleDisplay(this.isShow);
 this.router.onSameUrlNavigation = 'reload';
